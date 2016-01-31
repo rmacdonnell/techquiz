@@ -16,10 +16,10 @@ class nginxcreator:
 			args = str(len(sys.argv)-1)
 			print("number of args passed: " +args)
 		if (len(sys.argv) == 2):
-			print ('creating test page for '+sys.argv[1])
 			site = sys.argv[1]
 		else:
 			site = "testquiz"
+		print ('creating test page for '+ site)
 		response = self.nxservblock(site)
 		return (response)
 	def nxservblock(self,site):
