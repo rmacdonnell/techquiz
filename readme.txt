@@ -6,13 +6,13 @@ this is a single use script but built in a way to be easily changed and accept a
 
 it is hard coded to accept only 1 user arguement and if none present default to testquiz
 
-can be changed to put serverblock in nginx site 
+used to put serverblock in nginx site config 
 Example:
-within "def sbcontents(self,site):" is #server_name 
-uncomment this to have this script base its creation off of hostheader using regex lookups
-you will currently get warnings about dual port 8888 blocks if you test this without that consideration 
-as multiple blocks are attempting to listen for the same thing on the same port 
-as they are looking at seperate roots you would have seperate html content
+within "def sbcontents(self,site):" is a line #server_name 
+uncomment this to have this script use arguement input as servername and hostheader using regex lookups 
+you will get warnings about dual port 8888 blocks if you use this without that uncommented
+this is becasue multiple blocks are attempting to listen for the same thing on the same port 
+as they are looking at seperate roots for the index you would have seperate html content
 in certain scenarios knowing and being able to introduce this is beneficial.
 
 
