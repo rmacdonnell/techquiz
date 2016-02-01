@@ -9,7 +9,8 @@ class nginxcreator:
 			print ("installing app")
 			os.system("yum -y update")
 			os.system("yum -y install nginx")
-	def main(self,site="testquiz"):
+			os.system("service nginx start")
+	def main(self,site="testquiz"): #defaults site creation to testquiz
 		checknginx = self.installapp()
 		if (len(sys.argv) >2): # check of sysargs legth
 			print ("two arguements passed , only expecting one ,set to autobuild techquiz by default")
@@ -39,7 +40,7 @@ class nginxcreator:
 				response = landingpage.write(wlpcontents)
 				nblockf.close
 				landingpage.close
-				os.system("service nginx restart")
+				os.system("service nginx reload")
 				return response
 			except Exception as inst:
 				print 'unable to write to /var/www/' + str(site) + '/index.html'
