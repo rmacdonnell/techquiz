@@ -1,12 +1,11 @@
 #python solution for auto generating static landingpage 
 
-this should ideally be done in a puppet/salt solution using grains and pillars ( modules and manifests)
+this should ideally be implemented alongside a puppet/salt solution using grains and pillars ( modules and manifests)
 
-this is a single use script but built in a way to be easily changed and accept additional arguments and expand functionality
+it is currently hard coded to accept only a single argument and if none present defaults to testquiz
 
-it is hard coded to accept only 1 user argument and if none present default to testquiz
-
-used to put serverblock in nginx site config 
+additional functionality.
+generate serverblock in nginx site config 
 Example:
 within "def sbcontents(self,site):" is a line #server_name 
 uncomment this to have this script use argument input as servername and hostheader using regex lookups 
